@@ -1,0 +1,50 @@
+---
+title: "HW1_exer1"
+author: "Group9"
+date: "9/4/2020"
+output: html_document
+---
+
+# Exercise 1
+
+## Introduction
+
+
+### Ana Gabriela Itokazu
+
+#### 1
+#### 2
+#### 3
+#### 4
+#### 5
+#### 6
+
+### Cary Laurendine Burdick
+
+#### 1
+#### 2
+#### 3
+#### 4
+#### 5
+#### 6
+
+### Harsha Sameera Chathuranga Galkandra Archchige
+
+#### 1
+#### 2
+#### 3
+#### 4
+#### 5
+#### 6
+
+<!-- second part of the exercise: -->
+## R Markdown Syntax
+
+### 1
+### 2
+### 3
+### 4
+### 5
+### 6
+### 7 
+### 8
