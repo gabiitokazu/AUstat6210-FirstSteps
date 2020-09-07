@@ -40,7 +40,7 @@ head(VALE)
 
 An xts object `stocks` was created to unify all closing values from all the datasets, and then used to plot these values:
 
-```{r plot, include=TRUE, eval=TRUE}
+```{r plot, fig.align="center", fig.width=8, fig.cap="chart of the closing price of the four stocks over the period of January 01, 2019 to September 06, 2020.", include=TRUE, eval=TRUE}
 
 stocks <- as.xts(data.frame(VALE=VALE[, "VALE.Close"],
                             CSCO=CSCO[, "CSCO.Close"],
@@ -55,19 +55,19 @@ plot(as.zoo(stocks),
      font.axis=1)
 legend("topleft",
        inset=.02,
-       c("VALE", "CSCO", "INTC", "WFC"),
+       c("Vale S.A.", "Cisco", "Intel", "Wells Fargo"),
        lty=1:4,
        cex=.5)
 ```
 
-```{r candlechart, include=TRUE, eval=TRUE}
+```{r candlechart, fig.align="center", fig.width=8, fig.cap="candlestick chart of the four stocks over the last four months", include=TRUE, eval=TRUE}
 
-stocks2 <- as.xts(data.frame(VALE=VALE['2020-05-01/2020-09-06'],
-                            CSCO=CSCO['2020-05-01/2020-09-06'],
-                            INTC=INTC['2020-05-01/2020-09-06'],
-                            WFC=WFC['2020-05-01/2020-09-06']
-                            ))
-candleChart(stocks2,
+FinancialAnalysis <- as.xts(data.frame(VALE=VALE['2020-05-01/2020-09-06'],
+                                       CSCO=CSCO['2020-05-01/2020-09-06'],
+                                       INTC=INTC['2020-05-01/2020-09-06'],
+                                       WFC=WFC['2020-05-01/2020-09-06']
+                                       ))
+candleChart(FinancialAnalysis,
             up.col="gray",
             dn.col="blue",
             theme="white")
