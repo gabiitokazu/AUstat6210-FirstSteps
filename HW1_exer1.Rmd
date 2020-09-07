@@ -11,6 +11,11 @@ bibliography: refs.bib
 
 ## Introduction
 
+```{r emo_install, echo=FALSE, message=FALSE, warning=FALSE}
+
+devtools::install_github(("hadley/emo"))
+
+```
 
 ### Ana Gabriela Itokazu `` `r emo::ji("speech_balloon")` ``
 
@@ -119,7 +124,7 @@ For the first couple semesters here, I had to take engineering core courses, suc
 <div style="text-align: justify">
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Actually, this document is for STAT 6250, it is part of our fist homework. And now I'm done! `` `r emo::ji("tada")` `` `` `r emo::ji("balloon")` `` I still need to go ahead and finish the second, but you know how we feel about homework...
+Actually, this document is for STAT 6250, as part of our first homework. And now I'm done! `` `r emo::ji("tada")` `` `` `r emo::ji("balloon")` `` I still need to go ahead and finish the second part, but you know how we feel about homework...
 
 </div>
 
