@@ -5,11 +5,78 @@ date: "9/4/2020"
 output: html_document
 ---
 
-# Exercise 2
+# Exercise 2: Financial Analysis
 
-### 1
-### 2
-### 3
+```{r trueinstall, echo=FALSE, message=FALSE, warning=FALSE}
+
+if (!require("quantmod")) {
+    install.packages("quantmod")
+    library(quantmod)
+}
+
+```
+
+The data set from four companies was obtained from yahoo, from January 1-2019 to September 6-2020. This was done utilizing the package `quantmod`:
+
+```{r install, results=FALSE, message=FALSE, warning=FALSE}
+
+start <- as.Date("2019-01-01")
+end <- as.Date("2020-09-06")
+
+getSymbols("VALE", src="yahoo", from=start, to=end)
+getSymbols("CSCO", src="yahoo", from=start, to=end)
+getSymbols("INTC", src="yahoo", from=start, to=end)
+getSymbols("WFC", src="yahoo", from=start, to=end)
+
+```
+
+After that, all the data sets should be fetched and can be seen in the environment tab. We can take a look at them here using the command `head(dataset)`. For the VALE dataset, for example:
+
+```{r viewdata, include=TRUE, eval=TRUE, echo=FALSE}
+
+head(VALE)
+
+```
+
+An xts object `stocks` was created to unify all closing values from all the datasets, and then used to plot these values:
+
+```{r plot, include=TRUE, eval=TRUE}
+
+stocks <- as.xts(data.frame(VALE=VALE[, "VALE.Close"],
+                            CSCO=CSCO[, "CSCO.Close"],
+                            INTC=INTC[, "INTC.Close"],
+                            WFC=WFC[, "WFC.Close"]
+                            ))
+plot(as.zoo(stocks),
+     screens=1,
+     lty=1:4,
+     xlab="Date",
+     ylab="Price",
+     font.axis=1)
+legend("topleft",
+       inset=.02,
+       c("VALE", "CSCO", "INTC", "WFC"),
+       lty=1:4,
+       cex=.5)
+```
+
+```{r candlechart, include=TRUE, eval=TRUE}
+
+stocks2 <- as.xts(data.frame(VALE=VALE['2020-05-01/2020-09-06'],
+                            CSCO=CSCO['2020-05-01/2020-09-06'],
+                            INTC=INTC['2020-05-01/2020-09-06'],
+                            WFC=WFC['2020-05-01/2020-09-06']
+                            ))
+candleChart(stocks2,
+            up.col="gray",
+            dn.col="blue",
+            theme="white")
+
+
+```
+
+
+
 ### 4
 ### 5
 ### 6

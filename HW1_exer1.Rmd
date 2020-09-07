@@ -74,13 +74,13 @@ I have been working around algae since the my Bachelor's second year. At first, 
 <div style="text-align: justify">  
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Later on, I changed subjects to applied biotechnology, where I played around with toxicology, remediation, pollutant removal, and fell in love with ecological restoration. My undergraduate research advisor, Dr. Leonardo Rorig got a grant to prospect algal species for heavy metal removal. After I graduated, I got into the Biotechnology Graduate Program, and started researching with Algal Turf Scrubber Systems (ATS) for nutrient removal and restoration. ATS is a fairly simple system, with a screen placed on top of a flowlane to providing a physical substratum for algae to attach, and grow. Some people maintain similar systems as a hobby to keep the health of their aquaria at home (see the video by the end of this text)! The goal species vary from filamentous to leafy-like algae, and the optimum for my setup were filamentous macroalgae species, such as *Ulva intestinalis* (see <a class="link" href="#alguinha">Figure 2</a>). We got to study the succession of algae communities, all the way from an algal-bacterial biofilm, to dense turf-like mats of filamentous algae.
+Later on, I changed subjects to applied biotechnology, where I played around with toxicology, remediation, pollutant removal, and fell in love with ecological restoration. My undergraduate research advisor, Dr. Leonardo Rorig got a grant to prospect algal species for heavy metal removal. After I graduated, I got into the Biotechnology Graduate Program, and started researching with Algal Turf Scrubber Systems (ATS) for nutrient removal and restoration. ATS is a fairly simple system, with a screen placed on top of a flowlane to providing a physical substratum for algae to attach, and grow. Some people maintain similar systems as a hobby to keep the health of their aquaria at home (see the video by the end of this section)! The goal species vary from filamentous to leafy-like algae, and the optimum for my setup were filamentous macroalgae species, such as *Ulva intestinalis* (see <a class="link" href="#alguinha">Figure 2</a>). We got to study the succession of algae communities, all the way from an algal-bacterial biofilm, to dense turf-like mats of filamentous algae.
 
 </div>
   
   <div class="image" id="alguinha">
   <img src="https://media-exp1.licdn.com/dms/image/C5616AQFuMJ2UAZm9Ew/profile-displaybackgroundimage-shrink_200_800/0?e=1604534400&v=beta&t=BPwNdX6wq5MGGOjABrrO_orplLg9ArPxRfHQPJH077M"/>
-  <p class="caption">Figure 2. Much better than other people's algae, it is your own: from @itokazu2018.</p>
+  <p class="caption">Figure 2. Much better than other people's algae, it is your own.</p>
   </div>
   
 <div style="text-align: justify"> 
@@ -132,14 +132,22 @@ Actually, this document is for STAT 6250, it is part of our fist homework. And n
   <center>
   <img src="https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif" width=80%
                                                                         height=80% />
+  </center>
   <br>
   
   
 (But hey, don't forget to click below and watch the DIY Algal Turf Scrubber!)
 
 <center>
-
+<!--
   [![](data:image/png;base64,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)](https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
+-->
+
+  <div class="giphy" id="wareagle">  
+  [![ATS DIY video](https://img.youtube.com/vi/BxhfCRL7mb8/0.jpg)](https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
+  </div>
+  
+  </center>
   
 <!--  
 <iframe width="420" height="315"
@@ -147,7 +155,7 @@ src="https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics">
 </iframe>
 -->  
   
-
+***
 ### Cary Laurendine Burdick
 
 #### 1
@@ -157,6 +165,7 @@ src="https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics">
 #### 5
 #### 6
 
+***
 ### Harsha Sameera Chathuranga Galkandra Archchige
 
 #### 1
@@ -167,16 +176,31 @@ src="https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics">
 #### 6
 
 <!-- second part of the exercise: -->
+***
+***
 ## R Markdown Syntax
 
 ### 1
+
 ### 2
+
 ### 3
+
 ### 4
-### 5
+
+Equations can be included as blocks:
+
+\[y = X \beta + \epsilon\]
+
+### 5 
+
+Or inline, such as \(A := [a_{i,j}]_{i.j = 1,...,p}\).
+
 ### 6
-### 7 
+
+### 7
+
 ### 8
 
-
+***
 # References
