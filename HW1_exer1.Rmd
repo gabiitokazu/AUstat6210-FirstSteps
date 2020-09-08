@@ -11,13 +11,20 @@ bibliography: refs.bib
 
 ## Introduction
 
+[//]: # (to install and load emoji package)
+
 ```{r emo_install, echo=FALSE, message=FALSE, warning=FALSE}
 
-devtools::install_github(("hadley/emo"))
+if (!require("emo")) {
+  devtools::install_github(("hadley/emo"))
+  library(emo)
+}
 
 ```
 
 ### Ana Gabriela Itokazu `` `r emo::ji("speech_balloon")` ``
+
+[//]: # (defining parameters for the block, image, giphy, and table environments for customized alignment and size)
 
  ```{css, echo=FALSE}
  
@@ -56,9 +63,12 @@ devtools::install_github(("hadley/emo"))
 <div class="block">
 
 >"The price of anything is the amount of life you exchange for it.”
+> 
 > -- @thoreau1993
 
 </div>
+
+[//]: # (ugly stuff for the indentation! couldn't fix it in a pretty way, guess ugly will do it)
 
 <div style="text-align: justify">
 
@@ -124,7 +134,7 @@ For the first couple semesters here, I had to take engineering core courses, suc
 <div style="text-align: justify">
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-Actually, this document is for STAT 6250, as part of our first homework. And now I'm done! `` `r emo::ji("tada")` `` `` `r emo::ji("balloon")` `` I still need to go ahead and finish the second part, but you know how we feel about homework...
+In fact, this document is for STAT 6250, as part of our first homework. And now I'm done! `` `r emo::ji("tada")` `` `` `r emo::ji("balloon")` `` I still need to go ahead and finish the second part, but you know how we feel about homework...
 
 </div>
 
@@ -143,22 +153,20 @@ Actually, this document is for STAT 6250, as part of our first homework. And now
   
 (But hey, don't forget to click below and watch the DIY Algal Turf Scrubber!)
 
-<center>
-<!--
-  [![](data:image/png;base64,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)](https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
--->
+  <center>
 
-  <div class="giphy" id="wareagle">  
-  [![ATS DIY video](https://img.youtube.com/vi/BxhfCRL7mb8/0.jpg)](https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
+[//]: # (image video: "(...)img.youtube.com/vi/VIDEO_ID/*number*.jpg" where number refers to the frame used on the thumbnail)
+
+  <div class="giphy" id="videoalgae">  
+  [![ATS DIY video](https://img.youtube.com/vi/BxhfCRL7mb8/0.jpg)](https://www.youtube.com/embed/BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
   </div>
   
   </center>
   
 <!--  
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics">
-</iframe>
--->  
+  [![](https://img.youtube.com/vi/BxhfCRL7mb8/0.jpg)](https://www.youtube.com/embed/BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
+-->
+
   
 ***
 ### Cary Laurendine Burdick
@@ -192,6 +200,8 @@ src="https://www.youtube.com/watch?v=BxhfCRL7mb8&ab_channel=Murphy%27sAquatics">
 ### 3
 
 ### 4
+
+[//]: # (equation syntax similar to LaTeX)
 
 Equations can be included as blocks:
 
