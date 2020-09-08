@@ -40,26 +40,36 @@ head(VALE)
 
 An xts object `stocks` was created to unify all closing values from all the datasets, and then used to plot these values:
 
-```{r plot, fig.align="center", fig.width=8, fig.cap="chart of the closing price of the four stocks over the period of January 01, 2019 to September 06, 2020.", include=TRUE, eval=TRUE}
+```{r stocks_object, include=TRUE, eval=TRUE}
 
 stocks <- as.xts(data.frame(VALE=VALE[, "VALE.Close"],
                             CSCO=CSCO[, "CSCO.Close"],
                             INTC=INTC[, "INTC.Close"],
                             WFC=WFC[, "WFC.Close"]
                             ))
-plot(as.zoo(stocks),
+```
+
+```{r plot_, echo=TRUE, results=FALSE, fig.show='hide', message=FALSE, warning=FALSE}
+
+plot(as.xts(stocks),
      screens=1,
      lty=1:4,
      xlab="Date",
      ylab="Price",
      font.axis=1)
-legend("topleft",
-       inset=.02,
-       c("Vale S.A.", "Cisco", "Intel", "Wells Fargo"),
-       lty=1:4,
-       cex=.5)
 ```
 
+```{r plot, fig.align="center", fig.width=8, fig.cap="Figure 1. Chart of the closing price of the four stocks over the period of January 01, 2019 to September 06, 2020.", include=TRUE, eval=TRUE}
+
+addLegend(legend.loc = "topleft",
+          legend.names = c("Vale S.A.", "Cisco", "Intel", "Wells Fargo"),
+          lty= 1:4,
+          col = NULL,
+          ncol = 1,
+          cex = 0.8,
+          on = 1)
+```
+<!--
 ```{r candlechart, fig.align="center", fig.width=8, fig.cap="candlestick chart of the four stocks over the last four months", include=TRUE, eval=TRUE}
 
 FinancialAnalysis <- as.xts(data.frame(VALE=VALE['2020-05-01/2020-09-06'],
@@ -74,7 +84,7 @@ candleChart(FinancialAnalysis,
 
 
 ```
-
+-->
 
 
 ### 4
