@@ -186,7 +186,11 @@ In fact, this document is for STAT 6250, as part of our first homework. And now 
 
 I'm Harsha from Sri Lanka, the country call as the "pearl of the Indian Ocean" `r emo::ji("star_struck")`.
 
-![Few attractions in Sri Lanka](/Users/harrs/Documents/GitHub/srilanka.jpg)
+
+```{r, echo=FALSE, out.width="75%", fig.cap="You should visit one day"}
+knitr::include_graphics("/Users/harrs/Documents/GitHub/srilanka.jpg")
+```
+
 
 ![You should visit one day](https://media.giphy.com/media/l0HlODSi2o73UNNN6/giphy.gif)
 
@@ -199,7 +203,7 @@ I'm researching on **aquaculture** which is the industry expanding rapidly over 
 ![**Its not only about your hunger, but also about your health and survival**](https://media.giphy.com/media/3orif3WTpZFYRhdLMs/giphy.gif)
 
 
-According Tacon *et al.* (2019) [@tacon2020trends], 
+According [@tacon2020trends], 
 >"total global aquaculture production now exceeds the global capture fisheries production by over 18.32 million tonnes>
 
 This emphasize the importance of aquaculture research to improve its efficiency for further `r emo::ji("stars")`.
