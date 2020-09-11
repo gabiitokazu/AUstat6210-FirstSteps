@@ -6,11 +6,9 @@ output: html_document
 bibliography: refs.bib
 ---
 
+
 ```{r, echo=FALSE, out.width="50%", fig.cap="puppy"}
 knitr::include_graphics("figure/puppy.jpeg")
 ```
 
 ![puppy](figure/puppy.jpeg)
-
-
-
