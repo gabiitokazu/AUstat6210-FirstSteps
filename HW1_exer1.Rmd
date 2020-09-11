@@ -179,14 +179,47 @@ In fact, this document is for STAT 6250, as part of our first homework. And now 
 #### 6
 
 ***
-### Harsha Sameera Chathuranga Galkandra Archchige
 
-#### 1
-#### 2
-#### 3
-#### 4
-#### 5
-#### 6
+### Harsha Galkanda-Arachchige (*under construction*)
+
+#### - Origin
+
+I'm Harsha from Sri Lanka, the country call as the "pearl of the Indian Ocean" `r emo::ji("star_struck")`.
+
+![Few attractions in Sri Lanka](/Users/harrs/Documents/GitHub/srilanka.jpg)
+
+![You should visit one day](https://media.giphy.com/media/l0HlODSi2o73UNNN6/giphy.gif)
+
+
+#### - Education
+
+I'm researching on **aquaculture** which is the industry expanding rapidly over the past decade exceeding the annual growth rates of poultry, pork, dairy and beef industries to provide animal protein to the world `r emo::ji("grinning")`. 
+
+
+![**Its not only about your hunger, but also about your health and survival**](https://media.giphy.com/media/3orif3WTpZFYRhdLMs/giphy.gif)
+
+
+According Tacon *et al.* (2019) [@tacon2020trends], 
+>"total global aquaculture production now exceeds the global capture fisheries production by over 18.32 million tonnes>
+
+This emphasize the importance of aquaculture research to improve its efficiency for further `r emo::ji("stars")`.
+
+
+
+#### - Fall 2020 @ Auburn
+
+
+|                   Course                   |           Time          |
+|:------------------------------------------:|:-----------------------:|
+| STAT 6210 R   Programming for Data Science | 2:00   pm - 2:50 pm MWF |
+| FISH 8990 Research and Dissertation        | TBA                     |
+
+#### - My research
+
+Following video is on my PhD research: 
+
+<iframe width='560' height='315' src='https://www.youtube.com/embed/O80uI836OM8' frameborder='0' allowfullscreen></iframe
+
 
 <!-- second part of the exercise: -->
 ***
