@@ -1,1 +1,12 @@
+---
+title: "HW1_exer1"
+author: "Group9"
+date: "9/4/2020"
+output: html_document
+bibliography: refs.bib
+---
 
+
+
+
+![puppey](/figure/puppy.jpeg)
