@@ -227,39 +227,50 @@ All in all, After about 6 years of school, I'm ready to be out in the real world
 ![](https://media.giphy.com/media/B1DOvStRW98DHpW4eg/giphy.gif)
 
 ***
+<div style="text-align: justify"> 
+### Harsha Galkanda-Arachchige
 
-### Harsha Galkanda-Arachchige (*under construction*)
 
 #### - Origin
 
-I'm Harsha from Sri Lanka, the country call as the "pearl of the Indian Ocean" `r emo::ji("star_struck")`.
+ 
+I'm Harsha from Sri Lanka, the country call as the "pearl of the Indian Ocean" because of its natural beauty `r emo::ji("star_struck")`. The island contains tropical forests, and a diverse landscape with high biodiversity.
+</div>
 
-
-```{r, echo=FALSE, out.width="75%", fig.cap="You should visit one day"}
+```{r, echo=FALSE, out.width="75%", fig.cap="It also known as the nation of smiling people"}
 knitr::include_graphics("/Users/harrs/Documents/GitHub/srilanka.jpg")
 ```
 
 
 ![You should visit one day](https://media.giphy.com/media/l0HlODSi2o73UNNN6/giphy.gif)
 
-
+<div style="text-align: justify"> 
 #### - Education
 
-I'm researching on **aquaculture** which is the industry expanding rapidly over the past decade exceeding the annual growth rates of poultry, pork, dairy and beef industries to provide animal protein to the world `r emo::ji("grinning")`. 
+I'm researching on **aquaculture** which is the industry expanding rapidly over the past decade exceeding the annual growth rates of poultry `r emo::ji("chicken")`, pork `r emo::ji("pig")`, dairy `r emo::ji("cow")` and beef `r emo::ji("poultry_leg")` industries to provide animal protein to the world `r emo::ji("fish")`. 
+</div>
+
+<div class="block">
+>“Total global aquaculture production now exceeds the global capture fisheries production by over 18.32 million tonnes.”
+>
+> -- @tacon2020trends
+
+</div>
+
+<div style="text-align: justify"> 
+This emphasize the importance of aquaculture research to improve its efficiency for further, since we are not expecting a whole lot of fish from ocean to meet the demand `r emo::ji("stars")`. 
+</div>
 
 
-![**Its not only about your hunger, but also about your health and survival**](https://media.giphy.com/media/3orif3WTpZFYRhdLMs/giphy.gif)
 
-
-According [@tacon2020trends], 
->"total global aquaculture production now exceeds the global capture fisheries production by over 18.32 million tonnes>
-
-This emphasize the importance of aquaculture research to improve its efficiency for further `r emo::ji("stars")`.
+![**Its not only about your hunger, but also about your health and survival**](https://media.giphy.com/media/jLo5ZRmjR60Ks/giphy.gif)
 
 
 
+<div style="text-align: justify"> 
 #### - Fall 2020 @ Auburn
 
+I have almost completed full credit hours to have my degree `r emo::ji("mortar_board")` and this class of "R programming for Data Science" will be my last class `r emo::ji("sparkles")`.
 
 |                   Course                   |           Time          |
 |:------------------------------------------:|:-----------------------:|
@@ -268,22 +279,50 @@ This emphasize the importance of aquaculture research to improve its efficiency 
 
 #### - My research
 
-Following video is on my PhD research: 
+I'm researching on to produce an alternative salt mixture to replace commercial sea salt to rear Pacific white shrimp in inland ventures. In addition, I'm trying to find the effect of different ions and ionic ratios (such as Ca and Mg) in low salinity waters on physiology, growth and survival of shrimp. Hopefully, this project will help to the growth of inland shrimp production sector `r emo::ji("bulb")`.
 
-<iframe width='560' height='315' src='https://www.youtube.com/embed/O80uI836OM8' frameborder='0' allowfullscreen></iframe
+Following video is on my PhD research (sorry, its a bot longer `r emo::ji("worried")`.)
+
+</div>
+
+<iframe width='500' height='250' src='https://www.youtube.com/embed/O80uI836OM8' frameborder='0' allowfullscreen></iframe
 
 
 <!-- second part of the exercise: -->
 ***
 ***
+<div style="text-align: justify">
+
 ## R Markdown Syntax
 
 ### 1
 
+
+
 ### 2
+
+Mean, median and variance values of standard normal distribution of 100 values.
+
+```{r, echo=FALSE}
+set.seed(10)
+x=rnorm(100)
+mean(x)
+median(x)
+var(x)
+```
+
+These results are different from 0 (mean), 0 (median) and 1 (variance) which are the theoretical values of standard normal distribution. However, this result is not surprising as the sample size (100) is low. The probability of getting mean=0 and variance=1 is low as sample size is small. When it increase the size of the sample, the result of mean and variance values become much more closer to the truth.
+
+</div>
 
 ### 3
 
+
+```{r, echo=FALSE, fig.align="center", fig.width=8, fig.height=6, fig.cap="Figure 1: Histogram of x (n=100)"}
+hist(x)
+```
+
+<div style="text-align: justify">
 ### 4
 
 [//]: # (equation syntax similar to LaTeX)
@@ -299,6 +338,8 @@ Or inline, such as \(A := [a_{i,j}]_{i.j = 1,...,p}\).
 ### 6
 
 <font color="blue">"Keep calm and carry on programming"</font>
+
+</div>
 
 ### 7
 
