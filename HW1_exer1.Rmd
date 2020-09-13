@@ -169,14 +169,62 @@ In fact, this document is for STAT 6250, as part of our first homework. And now 
 
   
 ***
-### Cary Laurendine Burdick
+### Cary Burdick
 
-#### 1
-#### 2
-#### 3
-#### 4
-#### 5
-#### 6
+<div class="block">
+
+>“I see now that the circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are.”
+>
+> -- @yuyama1998
+
+</div>
+
+#
+Hi there, I'm Cary. I'm from Mobile, AL, the original birthplace of Mardi Gras `` `r emo::ji("fleur_de_lis")` ``. Mardi Gras has always been a big holiday in my family. We gather a bunch of friends and family, make a potluck feast of food with plenty of King Cake, and map out the routes of the parades so we can watch them multiple times and maximize the amount of beads and Moon Pies we catch. I always make a point to visit during this time, even when I'm busy with school. I'm still holding out hope that it'll happen next February, but we'll have to see if the pandemic allows it.
+
+  <div class="image" id="kingcake">
+  <img src="https://images-gmi-pmc.edge-generalmills.com/c58b942a-3e45-4945-8a1e-5b52466d3780.jpg"/>
+  <p class="caption">A King Cake adorned with the traditional Mardi Gras colors of purple, green, and gold.</p>
+  </div>
+
+#
+
+I'm currently enrolled in the Data Science Master's Program at Auburn. It's a new program that just started in the Fall 2019 semester and it lasts three semesters, so I'll be part of the first cohort to graduate with the degree. I also attended Auburn from 2014-2018 and received my undergraduate degree in Business Analytics, so I've been in Auburn for quite some time now. My final semester is pretty busy, and my class schedule is listed below:
+
++--------------------------------------------+-------------------------+
+|                   Course                   |           Time          |
++:==========================================:+:=======================:+
+| STAT 6210 R   Programming for Data Science |   2:00pm - 2:50pm MWF   |
++--------------------------------------------+-------------------------+
+| STAT 7940 Capstone Project                 | 1:00pm - 2:15pm <br> T - 11:00am - 12:15pm R  |  
++--------------------------------------------+-------------------------+
+| COMP 6600 Artificial Intelligence          | 2:00pm - 3:15pm TR      |
++--------------------------------------------+-------------------------+
+
+#
+
+In addition to taking these classes, I also work in the Business Analytics departent as a Graduate Assistant, and I'm working remotely as a part-time employee of Truist Bank `` `r emo::ji("bank")` `` in the Model Risk Management department. Needless to say, I've got a busy schedule:
+
+  <div class="giphy" id="tired">
+  <img src="https://media.giphy.com/media/bEs40jYsdQjmM/giphy.gif"/>
+  <p class="caption"></p>
+  </div>
+  
+#
+  
+But, once this semester finally comes to a close, I'm looking forward to taking a break and getting to visit family again or potentially travel. Of all the places I've been, Positano, Italy `` `r emo::ji("italy")` `` will forever stand out as one of the most beautiful places in the world. I went about 10 years ago and have wanted to go back ever since. Take a look for yourself (although a certain professor reading this may very well already know about it):
+
+  <center>
+  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/onWsoogDrPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+#
+
+All in all, After about 6 years of school, I'm ready to be out in the real world. I'm going to take this semester day by day, try my best to stay as organized and motivated as possible with these online classes, and try to keep my mental and physical health in check. I want to be more active and utilize the land around me to do so. I've always been fascinated by the local state park in Auburn known as Chewacla `` `r emo::ji("national_park")` ``, so I'm going to make an effort to find some free time and get out there as often as possible before I leave Auburn.
+
+  <center>
+  
+![](https://media.giphy.com/media/B1DOvStRW98DHpW4eg/giphy.gif)
 
 ***
 
@@ -250,9 +298,21 @@ Or inline, such as \(A := [a_{i,j}]_{i.j = 1,...,p}\).
 
 ### 6
 
+<font color="blue">"Keep calm and carry on programming"</font>
+
 ### 7
 
+<button data-toggle="collapse" data-target="#demo">See more</button>
+<div id="demo" class="collapse">
+Not much more to see
+</div> 
+
+
 ### 8
+
+<div class="alert alert-success">
+  <strong>Ok, let's get this over with:</strong> No, I'm not seasick. Yes, I've always been green. No, I didn't eat grass as a child.
+</div>
 
 ***
 # References
