@@ -175,7 +175,7 @@ In fact, this document is for STAT 6250, as part of our first homework. And now 
 
 >“I see now that the circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are.”
 >
-> -- @yuyama1998
+> -- @shudo1998
 
 </div>
 
@@ -196,7 +196,7 @@ I'm currently enrolled in the Data Science Master's Program at Auburn. It's a ne
 +:==========================================:+:=======================:+
 | STAT 6210 R   Programming for Data Science |   2:00pm - 2:50pm MWF   |
 +--------------------------------------------+-------------------------+
-| STAT 7940 Capstone Project                 | 1:00pm - 2:15pm <br> T - 11:00am - 12:15pm R  |  
+| STAT 7940 Capstone Project                 | 1:00pm - 2:15pm T <br> 11:00am - 12:15pm R  |  
 +--------------------------------------------+-------------------------+
 | COMP 6600 Artificial Intelligence          | 2:00pm - 3:15pm TR      |
 +--------------------------------------------+-------------------------+
