@@ -281,7 +281,7 @@ I have almost completed full credit hours to have my degree `r emo::ji("mortar_b
 
 I'm researching on to produce an alternative salt mixture to replace commercial sea salt to rear Pacific white shrimp in inland ventures. In addition, I'm trying to find the effect of different ions and ionic ratios (such as Ca and Mg) in low salinity waters on physiology, growth and survival of shrimp. Hopefully, this project will help to the growth of inland shrimp production sector `r emo::ji("bulb")`.
 
-Following video is on my PhD research (sorry, its a bot longer `r emo::ji("worried")`.)
+Following video is on my PhD research (sorry, its a bit longer `r emo::ji("worried")`.)
 
 </div>
 
@@ -295,9 +295,29 @@ Following video is on my PhD research (sorry, its a bot longer `r emo::ji("worri
 
 ## R Markdown Syntax
 
-### 1
+### 1 
+Show an example where the chunk option cache = T leads to a misleading answer
 
+Initially, the code chunk was knitted with r=2, and in the second run, r value was changed in to r=3. 
+```{r area, echo=TRUE, cache=TRUE}
+r=3
+```
 
+Code chunk without "dependson" function. Due to cache=T, already compiled r=2 was used here to calculate the area of the circle, which is incorrect.
+
+```{r circle1, echo=TRUE, cache=TRUE}
+a=3.14*r^2
+a
+```
+
+Code chunk with "dependson" function [dependson=r]. Eventhough cache=T, due to dependson function, correct/updated r value (r=3) was used to calculate area of the circle (a).
+
+```{r circle, echo=TRUE, cache=TRUE, dependson=r}
+a=3.14*r^2
+a
+
+```
+First run with r=2, r-value compile in to the code. This compiled value of r=2 use through the time, when "r" use in formulations. This could easily result misleading outcomes, if it make later changes to the value of r (as I have changed r-value as r=3). You can see two different values for area (a) with r=2 (initial value) and r=3 (changed value). However, "dependson" function specifically point to re-evaluate/verify the already compiled values, which will avoid possible mistakes due to cache=T function. As a result, eventhough r-value was changed, still the code chunk looks for updated r-value to calculate "a". So, in case if r-value change through different sections over time, it is safe to keep cache=F or specify through "dependson" function.
 
 ### 2
 
