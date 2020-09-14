@@ -127,7 +127,7 @@ For the first couple semesters here, I had to take engineering core courses, suc
 <center>
 | Classes | Time |
 |:-|:-|
-| STAT 6250 - R Programming for Data Science | MWF 14h-14h50 |
+| STAT 6210 - R Programming for Data Science | MWF 14h-14h50 |
 | BSEN 6250 - Deterministic Modeling | T 12h-14h50 Th 9h-11h50 |
 | COMP 6130 - Data Mining | MWF 13h-13h50 |
   
