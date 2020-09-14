@@ -21,7 +21,7 @@ The data set from four companies was obtained from yahoo, from January 1-2019 to
 ```{r install, results=FALSE, message=FALSE, warning=FALSE}
 
 start <- as.Date("2019-01-01")
-end <- as.Date("2020-09-06")
+end <- as.Date(Sys.Date())
 
 getSymbols("VALE", src="yahoo", from=start, to=end)
 getSymbols("CSCO", src="yahoo", from=start, to=end)
