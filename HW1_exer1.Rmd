@@ -238,7 +238,7 @@ I'm Harsha from Sri Lanka, the country call as the "pearl of the Indian Ocean" b
 </div>
 
 ```{r, echo=FALSE, out.width="75%", fig.cap="It also known as the nation of smiling people"}
-knitr::include_graphics("/Users/harrs/Documents/GitHub/srilanka.jpg")
+knitr::include_graphics("figure/srilanka.jpg")
 ```
 
 
