@@ -295,8 +295,7 @@ Following video is on my PhD research (sorry, its a bit longer `r emo::ji("worri
 
 ## R Markdown Syntax
 
-### 1 
-Show an example where the chunk option cache = T leads to a misleading answer
+### 1. Misleading Answer
 
 Initially, the code chunk was knitted with r=2, and in the second run, r value was changed in to r=3. 
 ```{r area, echo=TRUE, cache=TRUE}
@@ -319,9 +318,9 @@ a
 ```
 First run with r=2, r-value compile in to the code. This compiled value of r=2 use through the time, when "r" use in formulations. This could easily result misleading outcomes, if it make later changes to the value of r (as I have changed r-value as r=3). You can see two different values for area (a) with r=2 (initial value) and r=3 (changed value). However, "dependson" function specifically point to re-evaluate/verify the already compiled values, which will avoid possible mistakes due to cache=T function. As a result, eventhough r-value was changed, still the code chunk looks for updated r-value to calculate "a". So, in case if r-value change through different sections over time, it is safe to keep cache=F or specify through "dependson" function.
 
-### 2
+\
 
-Mean, median and variance values of standard normal distribution of 100 values.
+### 2. Mean, Median, and Variance
 
 ```{r, echo=FALSE}
 set.seed(10)
@@ -333,9 +332,9 @@ var(x)
 
 These results are different from 0 (mean), 0 (median) and 1 (variance) which are the theoretical values of standard normal distribution. However, this result is not surprising as the sample size (100) is low. The probability of getting mean=0 and variance=1 is low as sample size is small. When it increase the size of the sample, the result of mean and variance values become much more closer to the truth.
 
-</div>
+\
 
-### 3
+### 3. Histogram
 
 
 ```{r, echo=FALSE, fig.align="center", fig.width=8, fig.height=6, fig.cap="Figure 1: Histogram of x (n=100)"}
@@ -343,7 +342,10 @@ hist(x)
 ```
 
 <div style="text-align: justify">
-### 4
+
+\
+
+### 4. Equation
 
 [//]: # (equation syntax similar to LaTeX)
 
@@ -351,25 +353,29 @@ Equations can be included as blocks:
 
 \[y = X \beta + \epsilon\]
 
-### 5 
+\
+
+### 5. In-line Equation
 
 Or inline, such as \(A := [a_{i,j}]_{i.j = 1,...,p}\).
 
-### 6
+\
+
+### 6. Blue Text
 
 <font color="blue">"Keep calm and carry on programming"</font>
 
-</div>
+\
 
-### 7
+### 7. Nothing to See Here
 
 <button data-toggle="collapse" data-target="#demo">See more</button>
 <div id="demo" class="collapse">
 Not much more to see
-</div> 
 
+\
 
-### 8
+### 8. Color Box
 
 <div class="alert alert-success">
   <strong>Ok, let's get this over with:</strong> No, I'm not seasick. Yes, I've always been green. No, I didn't eat grass as a child.
