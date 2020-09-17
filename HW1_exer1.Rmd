@@ -11,7 +11,9 @@ bibliography: refs.bib
 
 ## Introduction
 
-[//]: # (to install and load emoji package)
+<!--
+to install and load emoji package)
+-->
 
 ```{r emo_install, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -24,7 +26,9 @@ if (!require("emo")) {
 
 ### Ana Gabriela Itokazu `` `r emo::ji("speech_balloon")` ``
 
-[//]: # (defining parameters for the block, image, giphy, and table environments for customized alignment and size)
+<!--
+defining parameters for the block, image, giphy, and table environments for customized alignment and size
+-->
 
  ```{css, echo=FALSE}
  
@@ -68,7 +72,9 @@ if (!require("emo")) {
 
 </div>
 
-[//]: # (ugly stuff for the indentation! couldn't fix it in a pretty way, guess ugly will do it)
+<!--
+(ugly stuff for the indentation! couldn't fix it in a pretty way, guess ugly will do it)
+-->
 
 <div style="text-align: justify">
 
@@ -155,7 +161,9 @@ In fact, this document is for STAT 6250, as part of our first homework. And now 
 
   <center>
 
-[//]: # (image video: "(...)img.youtube.com/vi/VIDEO_ID/*number*.jpg" where number refers to the frame used on the thumbnail)
+<!--
+image for the video: "(...)img.youtube.com/vi/VIDEO_ID/*number*.jpg" where number refers to the frame used on the thumbnail
+-->
 
   <div class="giphy" id="videoalgae">  
   [![ATS DIY video](https://img.youtube.com/vi/BxhfCRL7mb8/0.jpg)](https://www.youtube.com/embed/BxhfCRL7mb8&ab_channel=Murphy%27sAquatics)
@@ -367,7 +375,7 @@ Or inline, such as \(A := [a_{i,j}]_{i.j = 1,...,p}\).
 
 \
 
-### 7. Nothing to See Here
+### 7. Wanna see more?
 
 <button data-toggle="collapse" data-target="#demo">See more</button>
 <div id="demo" class="collapse">
