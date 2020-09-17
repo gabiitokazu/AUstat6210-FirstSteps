@@ -7,7 +7,9 @@ output: html_document
 
 # Exercise 2: Financial Analysis
 
-```{r trueinstall, echo=FALSE, message=FALSE, warning=FALSE}
+First we need to make sure we have all we need:
+
+```{r trueinstall, results=FALSE, message=FALSE, warning=FALSE}
 
 if (!require("quantmod")) {
     install.packages("quantmod")
@@ -21,12 +23,9 @@ The data set from four companies was obtained from yahoo, from January 1-2019 to
 ```{r install, results=FALSE, message=FALSE, warning=FALSE}
 
 start <- as.Date("2019-01-01")
-end <- as.Date(Sys.Date())
+end <- as.Date(Sys.Date()) 
 
-getSymbols("VALE", src="yahoo", from=start, to=end)
-getSymbols("CSCO", src="yahoo", from=start, to=end)
-getSymbols("INTC", src="yahoo", from=start, to=end)
-getSymbols("WFC", src="yahoo", from=start, to=end)
+getSymbols(c("VALE", "CSCO", "INTC", "WFC"), src="yahoo", from=start, to=end)
 
 ```
 
@@ -51,7 +50,7 @@ stocks <- as.xts(data.frame(VALE=VALE[, "VALE.Close"],
 
 ```{r plot_, echo=TRUE, results=FALSE, fig.show='hide', message=FALSE, warning=FALSE}
 
-plot(as.xts(stocks),
+plot(stocks,
      screens=1,
      lty=1:4,
      xlab="Date",
