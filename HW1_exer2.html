@@ -597,16 +597,73 @@ kable(SharpeResults)</code></pre>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="still-needs-to-be-done" class="section level1">
-<h1>7 still needs to be done</h1>
-<p>Consider an equally weighted portfolio (made of the four stocks) and compute the variance of the returns of this portfolio. How is the variance of this portfolio compared to variance of the individual returns of the stocks?</p>
+<p><br />
+</p>
+<!--
+I think this is right but not sure? Equally weighted just means adding across all rows then dividing by 4 to make a new column
+
+Then mean & variance of that column
+-->
+<p>Now we consider consider an equally weighted portfolio of all of these stocks combined. We simply add each of the four stocks together per day, then take the average to calculate the equally weighted new stock. Below are the four stocks listed again with the “Combined” stock at the bottom for comparison:</p>
 <pre class="r"><code>n &lt;- ncol(stocks)
 
 weights &lt;- rep(1/n,n)
 
 weights &lt;- stocks / sum(data.frame(stocks))</code></pre>
-<p>EWreturn &lt;- as.matrix(rep(1/length(stocks),length(stocks))) resEqual = as.matrix(returns) %*% t(EWreturn) colnames(resEqual) = “EqualWeight Portfolio”</p>
+<pre class="r"><code>stocks$Totals &lt;- rowSums(stocks[,c(&quot;VALE.Close&quot;, &quot;CSCO.Close&quot;, &quot;INTC.Close&quot;, &quot;WFC.Close&quot;)])/4
+
+#applying the Mean and Variance functions with a vector output into a data.frame object
+stocks_mean &lt;- data.frame(sapply(stocks, mean)) 
+stocks_var &lt;- data.frame(sapply(stocks, var))
+
+# put the results together
+stocks_stats &lt;- cbind(stocks_mean, stocks_var) 
+
+#making it prettier/intelligible
+colnames(stocks_stats) &lt;- c(&quot;Mean&quot;, &quot;Variance&quot;)
+rownames(stocks_stats) &lt;- c(&quot;Vale S.A.&quot;, &quot;Cisco&quot;, &quot;Intel&quot;, &quot;Wells Fargo&quot;, &quot;Combined&quot;)</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Mean</th>
+<th align="right">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Vale S.A.</td>
+<td align="right">11.60889</td>
+<td align="right">2.832754</td>
+</tr>
+<tr class="even">
+<td align="left">Cisco</td>
+<td align="right">47.85508</td>
+<td align="right">27.008139</td>
+</tr>
+<tr class="odd">
+<td align="left">Intel</td>
+<td align="right">53.84325</td>
+<td align="right">33.970371</td>
+</tr>
+<tr class="even">
+<td align="left">Wells Fargo</td>
+<td align="right">41.79016</td>
+<td align="right">112.362810</td>
+</tr>
+<tr class="odd">
+<td align="left">Combined</td>
+<td align="right">38.77434</td>
+<td align="right">15.024461</td>
+</tr>
+</tbody>
+</table>
+<p>Since they were equally weighted, the mean of the Combined stock is just an average of the averages. When looking at variance, it is the second lowest, only having a higher variance than Vale S.A.</p>
+<!--
+EWreturn <- as.matrix(rep(1/length(stocks),length(stocks)))
+resEqual = as.matrix(returns) %*% t(EWreturn)
+colnames(resEqual) = “EqualWeight Portfolio”
+-->
 </div>
 
 

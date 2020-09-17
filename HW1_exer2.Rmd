@@ -231,10 +231,15 @@ SharpeResults <- data.frame(Company, CalculatedSharpeRatio)
 kable(SharpeResults)
 
 ```
+\
 
-# 7 still needs to be done
+<!--
+I think this is right but not sure? Equally weighted just means adding across all rows then dividing by 4 to make a new column
 
-Consider an equally weighted portfolio (made of the four stocks) and compute the variance of the returns of this portfolio. How is the variance of this portfolio compared to variance of the individual returns of the stocks?
+Then mean & variance of that column
+-->
+
+Now we consider consider an equally weighted portfolio of all of these stocks combined. We simply add each of the four stocks together per day, then take the average to calculate the equally weighted new stock. Below are the four stocks listed again with the "Combined" stock at the bottom for comparison:
      
 ```{r dataset_EW, echo=FALSE, eval=TRUE, results=FALSE, message=FALSE, warning=FALSE}
 
