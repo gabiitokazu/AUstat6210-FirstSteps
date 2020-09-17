@@ -7,7 +7,7 @@ output: html_document
 
 # Exercise 2: Financial Analysis
 
-First we need to make sure we have all we need:
+First we need to a package:
 
 ```{r trueinstall, results=FALSE, message=FALSE, warning=FALSE}
 
@@ -18,9 +18,9 @@ if (!require("quantmod")) {
 
 ```
 
-The data set from four companies was obtained from yahoo, from January 1-2019 to September 6-2020. This was done utilizing the package `quantmod`:
+Then, we need to fetch the data. This data set from four companies will obtained from yahoo, from January 1-2019 to today's date. This is done utilizing the package `quantmod`:
 
-```{r install, results=FALSE, message=FALSE, warning=FALSE}
+```{r dataset, results=FALSE, message=FALSE, warning=FALSE}
 
 start <- as.Date("2019-01-01")
 end <- as.Date(Sys.Date()) 
@@ -37,7 +37,7 @@ head(VALE)
 
 ```
 
-An xts object `stocks` was created to unify all closing values from all the datasets, and then used to plot these values:
+An xts object `stocks` will created to unify all closing values from all the datasets, and then used to plot these values:
 
 ```{r stocks_object, include=TRUE, eval=TRUE}
 
@@ -68,25 +68,175 @@ addLegend(legend.loc = "topleft",
           cex = 0.8,
           on = 1)
 ```
-<!--
+
+We can also plot a Candle Chart of the four stocks over the last four months:
+
 ```{r candlechart, fig.align="center", fig.width=8, fig.cap="candlestick chart of the four stocks over the last four months", include=TRUE, eval=TRUE}
 
+# Redefining the data range and the data object
+startC <- as.Date("2020-05-01")
 FinancialAnalysis <- as.xts(data.frame(VALE=VALE['2020-05-01/2020-09-06'],
                                        CSCO=CSCO['2020-05-01/2020-09-06'],
                                        INTC=INTC['2020-05-01/2020-09-06'],
                                        WFC=WFC['2020-05-01/2020-09-06']
-                                       ))
+))
+
+# Calling the plot and making it nicer
 candleChart(FinancialAnalysis,
             up.col="gray",
             dn.col="blue",
             theme="white")
+```
+
+To compute the mean and variance of all four time series using the closing price of the stock, we use:
+
+```{r mean_var, include=TRUE, eval=TRUE, results='markup', warning=FALSE}
+
+#applying the Mean and Variance functions with a vector output into a data.frame object
+stocks_mean <- data.frame(sapply(stocks, mean)) 
+stocks_var <- data.frame(sapply(stocks, var))
+
+# put the results together
+stocks_stats <- cbind(stocks_mean, stocks_var) 
+
+#making it prettier/intelligible
+colnames(stocks_stats) <- c("Mean", "Variance")
+rownames(stocks_stats) <- c("Vale S.A.", "Cisco", "Intel", "Wells Fargo")
+
+```     
+
+<!--
+dimnames(stocks_stats)[names(stocks_stats) == "VALE.Close"] <- "Vale S.A."
+dimnames(stocks_stats)[names(stocks_stats) == "CSCO.Close"] <- "Cisco"
+dimnames(stocks_stats)[names(stocks_stats) == "INTC.Close"] <- "Intel"
+dimnames(stocks_stats)[dimnames(stocks_stats) == "WFC.Close"] <- "Wells Fargo"
+-->
+
+Voilà
+
+```{r knitr, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+
+if (!require("knitr")) {
+     install.packages("knitr")
+     library(knitr)
+}
+
+kable(stocks_stats)
+```
+<!--
+WHY THIS DOES NOT WORK?
+stock_stats_kable <- knitr::kable(head(stocks_stats), "html")
+kable_styling(stock_stats_kable, full_width=FALSE, position="center")
+-->
+
+Next, we want to compare these 4 stocks by their yearly Sharpe ratio \(S\) based on the last 10 years, with an yearly risk-free rate of return \(Rf\) is of \(3.00\:\%\): First we need to fetch the data for the last 10 years.
+
+```{r dataset_year, results=FALSE, message=FALSE, warning=FALSE}
+
+start <- as.Date("2010-09-01") #because I'm dumb
+end <- as.Date(Sys.Date()) 
+
+getSymbols(c("VALE", "CSCO", "INTC", "WFC"),
+           src="yahoo",
+           from=start,
+           to=end)
+
+```
+Now.. Math!
+
+The daily Sharpe Ratio is related to the yearly Sharpe Ratio by \(\tilde{S} = \frac{S}{\sqrt{252}}\), for which \(\tilde{S}\) is defined as
+\(\tilde{S} = \frac{\mathbb{E}[R_t - \tilde{R}_f]}{\sigma_{\mu}}\), where:
+\(\tilde{S}\) is the daily Sharpe ratio;
+\(\mathbb{E}[\cdot]\) stands for the expected value (estimated by the mean);
+\(R_t\) is the asset return defined as \(R_t = \frac{X_t - X_{t-1}}{X_{t-1}}\) where \(X_t\) is the price of an asset at time \(t\);
+\(\tilde{R}_f\) is the daily risk-free rate of return defined as \(\tilde{R}_f = \frac{R_f}{252}\); and
+\(\sigma_{\mu}\) is the standard deviation of the asset return.
+
+```{r sharpe, eval=TRUE, message=FALSE, warning=FALSE}
+
+# assign common variables
+Rf <- 3/100
+Rf_ <- Rf/252
+
+# Assign specific variables (see text full equations)
+AssetReturnVALE <- dailyReturn(VALE)
+stdVALE <- sd(AssetReturnVALE)
+meanVALE <- mean(AssetReturnVALE)
+
+AssetReturnCSCO <- dailyReturn(CSCO)
+stdCSCO <- sd(AssetReturnCSCO)
+meanCSCO <- mean(AssetReturnCSCO)
+
+AssetReturnINTC <- dailyReturn(INTC)
+stdINTC <- sd(AssetReturnINTC)
+meanINTC <- mean(AssetReturnINTC)
+
+AssetReturnWFC <- dailyReturn(WFC)
+stdWFC <- sd(AssetReturnWFC)
+meanWFC <- mean(AssetReturnWFC)
+
+# Calculating Yearly Sharpe Ratio based on Daily Sharpe Ratio:
+
+# Vale S.A.
+S_VALE <- (meanVALE - Rf_)/stdVALE
+SharpeVALE <- S_VALE * sqrt(252)
+
+# Cisco
+S_CSCO <- (meanCSCO - Rf_)/stdCSCO
+SharpeCSCO <- S_CSCO * sqrt(252)
+
+# Intel
+S_INTC <- (meanINTC - Rf_)/stdINTC
+SharpeINTC <- S_INTC * sqrt(252)
+
+#Wells Fargo
+S_WFC <- (meanWFC - Rf_)/stdWFC
+SharpeWFC <- S_WFC * sqrt(252)
+```
+
+```{r sharpeshow, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+if (!require("knitr")) {
+     install.packages("knitr")
+     library(knitr)
+}
+
+CalculatedSharpeRatio <- c(SharpeVALE, SharpeCSCO, SharpeINTC, SharpeWFC)
+Company <- c("Vale S.A.", "Cisco", "Intel", "Wells Fargo")
+
+SharpeResults <- data.frame(Company, CalculatedSharpeRatio)
+
+kable(SharpeResults)
+
+```
+
+# 7 still needs to be done
+
+Consider an equally weighted portfolio (made of the four stocks) and compute the variance of the returns of this portfolio. How is the variance of this portfolio compared to variance of the individual returns of the stocks?
+     
+```{r dataset_EW, echo=FALSE, eval=TRUE, results=FALSE, message=FALSE, warning=FALSE}
+
+start <- as.Date("2010-09-01") #because I'm dumb
+end <- as.Date(Sys.Date()) 
+
+getSymbols(c("VALE", "CSCO", "INTC", "WFC"),
+           src="yahoo",
+           from=start,
+           to=end)
+
+```
+
+```{r EqualWeight, eval=TRUE, message=FALSE, warning=FALSE}
+
+n <- ncol(stocks)
+
+weights <- rep(1/n,n)
+
+weights <- stocks / sum(data.frame(stocks))
 
 
 ```
--->
 
-
-### 4
-### 5
-### 6
-### 7 
+EWreturn <- as.matrix(rep(1/length(stocks),length(stocks)))
+resEqual = as.matrix(returns) %*% t(EWreturn)
+colnames(resEqual) = “EqualWeight Portfolio”
