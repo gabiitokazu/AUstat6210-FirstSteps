@@ -3,7 +3,7 @@ title: "HW1_exer2"
 author: "Group 9: Ana Gabriela Itokazu, Cary Burdick, Harsha Galkanda-Arachchige"
 date: "Final Version: September 18, 2020."
 output: html_document
-bibliography: refs2.bib
+bibliography: refs.bib
 ---
 <a href="https://github.com/AU-R-Programming/HW1-9/blob/master/HW1_exer2.Rmd">source</a>
 
