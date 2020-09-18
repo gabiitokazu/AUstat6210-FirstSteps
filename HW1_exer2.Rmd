@@ -1,7 +1,7 @@
 ---
 title: "HW1_exer2"
-author: "Group9"
-date: "9/4/2020"
+author: "Group 9: Ana Gabriela Itokazu, Cary Burdick, Harsha Galkanda-Arachchige"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output: html_document
 ---
 
@@ -10,7 +10,7 @@ output: html_document
 
 <div style="text-align: justify">
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 First things first,
 
 ```{r trueinstall, results=FALSE, message=FALSE, warning=FALSE}
@@ -23,7 +23,7 @@ if (!require("quantmod")) {
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 Then, we need to fetch the data. This data set from four companies will obtained from yahoo, from January 1-2019 to today's date. This is done utilizing the package `quantmod`:
 
 ```{r dataset, results=FALSE, message=FALSE, warning=FALSE}
@@ -39,7 +39,7 @@ getSymbols(c("VALE", "CSCO", "INTC", "WFC"),
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 After that, the data sets should be fetched and can be seen in the environment tab. The first and last lines for the `VALE` dataset, for example:
 
 ```{r knitr, include=TRUE, eval=TRUE, echo=FALSE, message=FALSE}
@@ -59,7 +59,7 @@ kable(VALEview)
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 We can create an `xts` object called `stocks` to unify all closing values from all the datasets (this `eXtensible Time Series` object will be used in several steps of this exercise). Then we can use the `plot()` function to take a look on it, and add a good-looking legend using the `addLegend()` function:
 
 ```{r stocks_object, include=TRUE, eval=TRUE}
@@ -93,7 +93,7 @@ addLegend(legend.loc = "topleft",
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 We can also plot a Candle Chart of the four stocks over the last four months using the `candleChart()` function over a newly made `xts` object called `FinancialAnalysis`, which includes the values for all four stocks over the last 4 months:
 
 ```{r candlechart, fig.align="center", fig.width=8, fig.cap="Figure 2. Candlestick chart of the four stocks over the past four months.", include=TRUE, eval=TRUE}
@@ -114,21 +114,21 @@ candleChart(FinancialAnalysis,
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 In this type of graph, each day is represented by a "candle" which appears to be similar to a box plot, but the anatomy of a candle is slightly different.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 **Wicks:** First, the lines or "wicks" sticking out of the top and bottom represent the high and low price of the stock. The top wick represents the highest price reached for the day while the bottom wick represents the lowest price reached.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 **Color:** The color of the box represents if the price increased or decreased from the beginning to the end of the day. <font color="gray">Gray</font> boxes represent an overall increase for the day while <font color="blue">blue</font> boxes represent a decrease.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 **Boxes:** Depending on the color, the top and bottom of the box (excluding the wick) changes meaning. If the box is <font color="gray">gray</font> representing an increase, then the bottom of the box is the opening price of the stock and the top of the box is the closing price. If the box is <font color="blue">blue</font> representing an overall decrease, then the top of the box is the closing price while the bottom is the opening price.
 
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 Coming back to that `stocks` object, we compute the mean and variance:
 
 ```{r mean_var, include=TRUE, eval=TRUE, results='markup', warning=FALSE}
@@ -153,15 +153,15 @@ kable(stocks_stats)
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 From these means we can see Vale S.A. has a much lower average price over the past four months when compared to the other three, and Intel Corporation has the highest average stock price.
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 The mean stock price doesn't tell the whole story, however. It is a good idea to calculate the variance which indicates how spread out the data are from the mean. A higher stock price variance indicates a higher volatility in the past four months. The variances of each stock are calculated below. From them we can see that although Vale S.A. had the lowest average stock price over the past four months, it also has the lowest variance, indicating that it stayed the most consistent. Wells Fargo, on the other hand, had the largest variance by a large margin, indicating that its stock price was the most volatile out of the four.
 
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 Next, we want to compare these 4 stocks by their yearly Sharpe ratio \(S\) based on the last 10 years, with an yearly risk-free rate of return \(Rf\) is of \(3.00\:\%\): First we need to fetch the data for the last 10 years.
 
 ```{r dataset_year, results=FALSE, message=FALSE, warning=FALSE}
@@ -177,17 +177,27 @@ getSymbols(c("VALE", "CSCO", "INTC", "WFC"),
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-Now.. Math! Consider that the daily Sharpe Ratio is related to the yearly Sharpe Ratio by \(\tilde{S} = \frac{S}{\sqrt{252}}\), for which \(\tilde{S}\) is defined as
-\(\tilde{S} = \frac{\mathbb{E}[R_t - \tilde{R}_f]}{\sigma_{\mu}}\), where:
-\(\tilde{S}\) is the daily Sharpe ratio;
-\(\mathbb{E}[\cdot]\) stands for the expected value (estimated by the mean);
-\(R_t\) is the asset return defined as \(R_t = \frac{X_t - X_{t-1}}{X_{t-1}}\) where \(X_t\) is the price of an asset at time \(t\);
-\(\tilde{R}_f\) is the daily risk-free rate of return defined as \(\tilde{R}_f = \frac{R_f}{252}\); and
-\(\sigma_{\mu}\) is the standard deviation of the asset return.
+ 
+Now.. Math!
 
-&nbsp;&nbsp;&nbsp;&nbsp;
-Then, we calculate (all) this for each Company:
+Consider that the daily Sharpe Ratio is related to the yearly Sharpe Ratio by 
+
+\[\tilde{S} = \frac{S}{\sqrt{252}}\]
+
+for which \(\tilde{S}\) is defined as
+
+\[\tilde{S} = \frac{\mathbb{E}[R_t - \tilde{R}_f]}{\sigma_{\mu}}\]
+
+where:
+
+- $\tilde{S}$ is the daily Sharpe ratio;
+- $\mathbb{E}[\cdot]$ stands for the expected value (estimated by the mean);
+- $R_t$ is the asset return defined as $R_t = \frac{X_t - X_{t-1}}{X_{t-1}}$ where $X_t$ is the price of an asset at time $t$;
+- $\tilde{R}_f$ is the daily risk-free rate of return defined as $\tilde{R}_f = \frac{R_f}{252}$; and
+- $\sigma_{\mu}$ is the standard deviation of the asset return.
+
+ 
+Then, we calculate (all) this for each Company, breaking down the equations and each term to be more understandable:
 
 ```{r sharpe, eval=TRUE, message=FALSE, warning=FALSE}
 
@@ -230,13 +240,29 @@ SharpeINTC <- S_INTC * sqrt(252)
 S_WFC <- (meanWFC - Rf_)/stdWFC
 SharpeWFC <- S_WFC * sqrt(252)
 
-
-# Unifying, making it look good...
-SharpeResults <- data.frame(c("Vale S.A.", "Cisco", "Intel", "Wells Fargo"),
-                            c(SharpeVALE, SharpeCSCO, SharpeINTC, SharpeWFC))
-
-colnames(SharpeResults) <- c("Company", "Calculated Sharpe Ratio")
 ```
+\
+
+For which we could make a cleaner code, with the same results:
+
+```{r sharpe2, eval=TRUE, message=FALSE, warning=FALSE}
+
+SharpeVALE2 <- ((mean(dailyReturn(VALE))-(0.03/252))
+                / sd(dailyReturn(VALE))) * sqrt(252)
+
+SharpeCSCO2 <- ((mean(dailyReturn(CSCO))-(0.03/252))
+                / sd(dailyReturn(CSCO))) * sqrt(252)
+
+SharpeINTC2 <- ((mean(dailyReturn(INTC))-(0.03/252))
+                / sd(dailyReturn(INTC))) * sqrt(252)
+
+SharpeWFC2 <- ((mean(dailyReturn(WFC))-(0.03/252))
+               / sd(dailyReturn(WFC))) * sqrt(252)
+
+```
+\
+
+ta-da!
 
 ```{r knitr2, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 
@@ -245,20 +271,33 @@ if (!require("knitr")) {
      library(knitr)
 }
 
+SharpeResults <- data.frame(c("Vale S.A.", "Cisco", "Intel", "Wells Fargo"),
+                            c(SharpeVALE, SharpeCSCO, SharpeINTC, SharpeWFC),
+                            c(SharpeVALE2, SharpeCSCO2, SharpeINTC2, SharpeWFC2))
+
+colnames(SharpeResults) <- c("Company", "Calculated Sharpe Ratio", "the other Calculated Sharpe Ratio")
+
 kable(SharpeResults)
+
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+ 
 Now we consider consider an equally weighted portfolio of all of these stocks combined. We simply add each of the four stocks together per day, then take the average to calculate the equally weighted new stock. Below are the four stocks listed again with the "Combined" stock at the bottom for comparison:
 
 ```{r combined, include=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 
-#creating a combined row with the averages for all companies
-stocks$Totals <- rowSums(stocks[,c("VALE.Close", "CSCO.Close", "INTC.Close", "WFC.Close")])/4
+stocks2 <- as.xts(data.frame(VALE=dailyReturn(VALE),
+                            CSCO=dailyReturn(CSCO),
+                            INTC=dailyReturn(INTC),
+                            WFC=dailyReturn(WFC)
+                            ))
 
-stocks_combined <- cbind(data.frame(sapply(stocks, mean)),
-                         data.frame(sapply(stocks, var))) 
+#creating a combined row with the averages for all companies
+stocks2$Totals <- rowSums(stocks2)/4
+
+stocks_combined <- cbind(data.frame(sapply(stocks2, mean)),
+                         data.frame(sapply(stocks2, var))) 
 
 colnames(stocks_combined) <- c("Mean", "Variance")
 rownames(stocks_combined) <- c("Vale S.A.", "Cisco", "Intel", "Wells Fargo", "Combined")
@@ -276,7 +315,8 @@ kable(stocks_combined)
 ```
 \
 
-&nbsp;&nbsp;&nbsp;&nbsp;
+<!--
 Since they were equally weighted, the mean of the Combined stock is just an average of the averages. When looking at variance, it is the second lowest, only having a higher variance than Vale S.A.
+-->
 
 </div>
