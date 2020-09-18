@@ -1,11 +1,11 @@
 ---
 title: "HW1_exer1"
 author: "Group 9: Ana Gabriela Itokazu, Cary Burdick, Harsha Galkanda-Arachchige"
-date: "`r format(Sys.Date(), '%B %d, %Y')`"
+date: "Final Version: September 18, 2020."
 output: html_document
 bibliography: refs.bib
 ---
-
+<a href="https://github.com/AU-R-Programming/HW1-9/blob/master/HW1_exer1.Rmd">source</a>
 
 # Exercise 1
 
